@@ -1,0 +1,26 @@
+{
+  "name": "festivalmusica_inicio",
+  "version": "1.0.0",
+  "description": "Proyecto Gulp, SASS, HTML",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dellpinos/CursoFestival.git"
+  },
+  "keywords": [
+    "SASS",
+    "Gulp"
+  ],
+  "author": "Martin del Pino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dellpinos/CursoFestival/issues"
+  },
+  "homepage": "https://github.com/dellpinos/CursoFestival#readme",
+  "devDependencies": {
+    "sass": "^1.57.1"
+  }
+}
