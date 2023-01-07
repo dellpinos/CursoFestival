@@ -20,8 +20,9 @@
 }
 
 .prueba {
-    @include m.heading;
+    @include m.heading(v.$morado, true);
 }
 .texto {
-    @include m.heading;
+    @include m.heading(v.$rosa, true);
+    font-weight: bold;
 }

@@ -372,13 +372,20 @@ h3 {
 .prueba {
   text-transform: uppercase;
   font-size: 2.4rem;
-  color: black;
-  letter-spacing: 1px;
+  color: #752f97;
+  letter-spacing: 15px;
+  text-align: center;
+  background-color: black;
+  border-radius: 1rem;
 }
 
 .texto {
   text-transform: uppercase;
   font-size: 2.4rem;
-  color: black;
-  letter-spacing: 1px;
+  color: #f53756;
+  letter-spacing: 15px;
+  text-align: center;
+  background-color: black;
+  border-radius: 1rem;
+  font-weight: bold;
 }
