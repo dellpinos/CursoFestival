@@ -1,0 +1,47 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.video {
+    position: relative;
+    max-height: 70rem;
+    min-height: 50rem;
+    overflow: hidden;   // evita desbordamientos
+
+    .overlay {
+        position: absolute;
+        background-color: red;
+        height: 100%;
+        width: 100%;
+        background: rgb(112, 4, 87);
+        background: linear-gradient(261deg, rgba(112, 4, 87, 0.5452774859943977) 4%, rgba(210, 62, 1, 0.2399553571428571) 100%);
+        display: flex;
+        flex-direction: column;  // me habilita a alinear verticalmente copn justify content
+        justify-content: center;
+    }
+
+    video {
+        width: auto;
+        display: block; // al igual que las imagenes para eliminar desbordamientos
+        @include m.desktop {
+            width: 100%;
+        }
+
+    }
+}
+.contenido-video {
+    z-index: 10;
+    h2 {
+        color: v.$blanco;
+        font-size: 7rem;
+        margin: 0;
+    }
+    p {
+        background-color: v.$rosa;
+        display: inline-block;
+        padding: 1rem 2rem;
+        color: v.$blanco;
+        font-weight: 700;
+        font-size: 2.4rem;
+        margin: 0;
+    }
+}
