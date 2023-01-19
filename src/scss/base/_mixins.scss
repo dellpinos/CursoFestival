@@ -25,6 +25,17 @@
     }
 }
 
+@mixin grid ($columns, $espaciado) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $espaciado;
+}
+
+@mixin resetear-Lista{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
 
 

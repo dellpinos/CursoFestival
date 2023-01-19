@@ -12,11 +12,19 @@ html {
 body {
     font-family: v.$fuente_principal;
     font-size: 1.6rem;
+
+    &.fijar-body {
+        overflow: hidden;
+    }
+    &.body-scroll {
+        padding-top: 86px;
+    }
 }
 
 p{
     font-size: 2rem;
     color: v.$negro;
+    line-height: 1.5em;   // si no utilizo una unidad de medida, por defecto son em
 }
 
 .contenedor {
@@ -40,4 +48,10 @@ h2 {
 }
 h3 {
     font-size: 3rem;
+}
+img {
+    max-width: 100%;
+    display: block;
+    width: 100%;
+    height: auto;
 }
