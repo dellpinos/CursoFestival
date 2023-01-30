@@ -4,6 +4,10 @@ const { src, dest, watch, parallel } = require("gulp"); // extraigo las funciona
 
 const sass = require("gulp-sass")(require('sass')); // extraigo gulp-sass y con esta extraigo sass
 const plumber = require('gulp-plumber');
+const autoprefixer = require('autoprefixer');  // soluciona problemas de soporte
+const cssnano = require('cssnano');   // comprime codigo css
+const postcss = require('gulp-postcss'); /// hace transformaciones utilizando las dos anteriores
+const sourcemaps = require('gulp-sourcemaps');
 
 // Imagenes
 const webp = require("gulp-webp");
@@ -11,11 +15,17 @@ const cache = require("gulp-cache");
 const imagemin = require("gulp-imagemin"); //la variable puede tener cualquier nombre
 const avif = require("gulp-avif");
 
+// JavaScript
+const terser = require('gulp-terser-js');
+
 function css (done) { //defino la funcion/tarea
 
     src('src/scss/**/*.scss')     // identificar archivo de SASS
+        .pipe( sourcemaps.init())
         .pipe( plumber())
         .pipe( sass() )     // compilarlo
+        .pipe( postcss ([autoprefixer(), cssnano() ]))
+        .pipe( sourcemaps.write('.'))
         .pipe( dest('build/css'));     // almacenar en el disco
 
     done(); // callback
@@ -61,6 +71,9 @@ function versionAvif (done) { //comprime imagenes a webp
 
 function javascript(done) {
     src('src/js/**/*.js')
+    .pipe( sourcemaps.init())
+    .pipe( terser())
+    .pipe( sourcemaps.write('.'))
     .pipe ( dest( 'build/js'));
 
     done();
